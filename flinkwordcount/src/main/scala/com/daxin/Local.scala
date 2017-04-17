@@ -1,5 +1,7 @@
 package com.daxin
 
+import org.apache.flink.api.common.ExecutionConfig
+import org.apache.flink.api.common.accumulators.IntCounter
 import org.apache.flink.api.scala._
 import org.apache.flink.configuration.Configuration
 import org.apache.flink.table.api.TableEnvironment
@@ -15,6 +17,8 @@ object Local {
 
     val conf =new Configuration()
 
+
+
     val env = ExecutionEnvironment.createLocalEnvironment(conf)
 
     val words = env.fromCollection(Array("a b","b c","c d","d e","a a a"))
@@ -22,6 +26,10 @@ object Local {
     val wc= words.flatMap(x=>x.split(" ")).map((_,1)).groupBy(0).sum(1)
 
     val tableEnv = TableEnvironment.getTableEnvironment(env)
+
+
+
+
 
 
     tableEnv.registerDataSet("wc",wc)
