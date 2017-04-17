@@ -23,8 +23,8 @@ object RemoteJob {
     val words: DataSet[String] = env.readTextFile("hdfs://node:9000/word/hadoop1.txt")
 //    def func(x:String):(String,Int)=(x,1)
 //    val m = words.map(x => func(x))
-
-   implicit val  typeInformation=TypeInformation.of(classOf[String])
+    //TODO 写了好久才解决问题
+    implicit val  typeInformation=TypeInformation.of(classOf[String])
     implicit val ct = ClassTag[String](classOf[String])
 
     words.flatMap(x=>x.split(" "))
