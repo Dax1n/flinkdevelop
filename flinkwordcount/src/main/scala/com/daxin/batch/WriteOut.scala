@@ -1,4 +1,4 @@
-package com.daxin
+package com.daxin.batch
 
 import org.apache.flink.api.common.accumulators.IntCounter
 import org.apache.flink.api.scala.ExecutionEnvironment

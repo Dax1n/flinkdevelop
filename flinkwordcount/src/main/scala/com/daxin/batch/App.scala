@@ -1,5 +1,4 @@
-package com.daxin
-
+package com.daxin.batch
 
 import org.apache.flink.api.scala._
 /**
