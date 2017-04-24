@@ -24,6 +24,8 @@ object MySQLSource {
     env.setParallelism(2)
 
 
+
+
   }
 
 }

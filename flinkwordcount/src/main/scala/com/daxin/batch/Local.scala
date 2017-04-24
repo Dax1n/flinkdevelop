@@ -35,6 +35,7 @@ object Local {
     tableEnv.registerDataSet("wc",wc)
 
 
+
     val sink=new CsvTableSink("C:\\迅雷下载\\flinkwordcount\\sink","-")
     tableEnv.sql("select * from wc").writeToSink(sink)
     println("---------------------------------------------------")
